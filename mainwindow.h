@@ -2,29 +2,20 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtWidgets>
-#include <QPixmap>
 
-//QT_BEGIN_NAMESPACE
-//namespace Ui {class MainWindow;}
-//QT_END_NAMESPACE
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow{
+class MainWindow : public QMainWindow
+{
     Q_OBJECT
-    float PL(float f, float d);
 
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
 
-
-    public:
-        MainWindow(QWidget *parent = nullptr);
-        ~MainWindow();
-        void draw_gradient();
-        QPixmap *map;
-        QGraphicsScene* scene;
-        QGraphicsView *view;
-
-        QLabel *label_;
-        QGroupBox *gradientGroupBox_;
-
+private:
+    Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
